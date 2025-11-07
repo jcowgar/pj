@@ -24,8 +24,7 @@ impl Default for Config {
         Self {
             scan_paths: vec![
                 dirs::home_dir()
-                    .unwrap_or_else(|| PathBuf::from("."))
-                    .join("Projects"),
+                    .unwrap_or_else(|| PathBuf::from(".")),
             ],
             project_markers: vec![
                 ".git".to_string(),
@@ -33,7 +32,7 @@ impl Default for Config {
                 ".hg".to_string(),
                 ".project".to_string(),
             ],
-            max_depth: 5,
+            max_depth: 3,
         }
     }
 }
@@ -93,7 +92,7 @@ mod tests {
     fn test_default_config() {
         let config = Config::default();
 
-        assert_eq!(config.max_depth, 5);
+        assert_eq!(config.max_depth, 3);
         assert_eq!(config.scan_paths.len(), 1);
         assert_eq!(config.project_markers.len(), 4);
         assert!(config.project_markers.contains(&".git".to_string()));
