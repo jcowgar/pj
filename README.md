@@ -47,6 +47,12 @@ cp pj.fish ~/.config/fish/functions/
 # ~/.config/fish/functions/pj.fish
 ```
 
+**Xonsh:**
+```python
+# Add to ~/.xonshrc
+source /path/to/pj/pj.xsh
+```
+
 ## Usage
 
 ### Basic Examples
