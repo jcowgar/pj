@@ -26,5 +26,15 @@ assets = [
     ["README.md", "usr/share/doc/pj/", "644"],
 ]
 
+[package.metadata.generate-rpm]
+assets = [
+    { source = "target/release/pj", dest = "/usr/bin/pj", mode = "0755" },
+    { source = "pj.sh", dest = "/usr/share/pj/pj.sh", mode = "0644" },
+    { source = "pj.fish", dest = "/usr/share/pj/pj.fish", mode = "0644" },
+    { source = "pj.xsh", dest = "/usr/share/pj/pj.xsh", mode = "0644" },
+    { source = "README.md", dest = "/usr/share/doc/pj/README.md", mode = "0644", doc = true },
+    { source = "LICENSE", dest = "/usr/share/doc/pj/LICENSE", mode = "0644", doc = true },
+]
+
 [dev-dependencies]
 tempfile = "3.13"
